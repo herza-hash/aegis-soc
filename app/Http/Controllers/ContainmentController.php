@@ -101,7 +101,7 @@ class ContainmentController extends Controller
 
         $durationLabel = $validated['duration'] === 'permanent' ? 'Permanently' : "for {$validated['duration']}";
 
-        return back()->with('success', "🛡️ [CONTAINMENT ACTIVE]: IP {$blocked->ip_address} quarantined {$durationLabel}. Ingress traffic will be dropped.");
+        return back()->with('success', "[CONTAINMENT ACTIVE]: IP {$blocked->ip_address} quarantined {$durationLabel}. Ingress traffic will be dropped.");
     }
 
     public function unblock(BlockedIp $blockedIp): RedirectResponse

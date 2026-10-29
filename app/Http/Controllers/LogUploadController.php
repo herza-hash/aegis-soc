@@ -138,11 +138,11 @@ class LogUploadController extends Controller
         $alertsAfter = SecurityAlert::count();
         $alertsTriggered = $alertsAfter - $alertsBefore;
 
-        $feedback = "📁 [FILE UPLOAD]: '{$originalFilename}' (" . $this->formatBytes($fileSize) . ") successfully ingested into pipeline '{$source->name}'. ";
+        $feedback = "[FILE UPLOAD]: '{$originalFilename}' (" . $this->formatBytes($fileSize) . ") successfully ingested into pipeline '{$source->name}'. ";
         $feedback .= "Processed {$processedCount}/{$totalLines} log entries (Batch: {$batchId}).";
 
         if ($alertsTriggered > 0) {
-            $feedback .= " ⚠️ {$alertsTriggered} SECURITY ALERT(S) TRIGGERED from uploaded logs!";
+            $feedback .= " {$alertsTriggered} SECURITY ALERT(S) TRIGGERED from uploaded logs!";
         }
 
         return back()->with('success', $feedback);

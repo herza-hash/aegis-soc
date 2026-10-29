@@ -9,14 +9,14 @@
     <div class="flex flex-col gap-4 border-b border-zinc-800/80 pb-6 sm:flex-row sm:items-center sm:justify-between">
         <div>
             <div class="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-cyan-400">
-                <span class="inline-block h-1.5 w-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee]"></span>
+                <span class="inline-block h-1.5 w-1.5 rounded-full bg-cyan-400"></span>
                 <span>AEGIS / ENGINE CONFIGURATION</span>
             </div>
             <h1 class="mt-1 text-2xl font-bold tracking-tight text-zinc-100 sm:text-3xl">System Settings & Detection Rules</h1>
         </div>
 
         <div class="flex items-center gap-2">
-            <button type="button" @click="ruleModalOpen = true" class="inline-flex items-center gap-1.5 rounded-md bg-cyan-600 px-3.5 py-1.5 font-mono text-xs font-semibold text-white hover:bg-cyan-500 transition-colors shadow-sm shadow-cyan-600/30">
+            <button type="button" @click="ruleModalOpen = true" class="inline-flex items-center gap-1.5 rounded-md bg-cyan-600 px-3.5 py-1.5 font-mono text-xs font-semibold text-white hover:bg-cyan-500 transition-colors">
                 <span>+ NEW DETECTION RULE</span>
             </button>
         </div>
@@ -209,7 +209,7 @@
 
     <!-- Create Detection Rule Modal -->
     <div x-cloak x-show="ruleModalOpen" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" @click.self="ruleModalOpen = false" @keydown.escape.window="ruleModalOpen = false">
-        <div class="w-full max-w-lg rounded-lg border border-zinc-800 bg-zinc-950 shadow-2xl overflow-hidden font-mono text-xs" x-show="ruleModalOpen" x-transition>
+        <div class="w-full max-w-lg rounded-lg border border-zinc-800 bg-zinc-950 overflow-hidden font-mono text-xs" x-show="ruleModalOpen" x-transition>
             <!-- Header -->
             <div class="flex items-center justify-between border-b border-zinc-800 px-5 py-4 bg-zinc-900/60">
                 <h3 class="font-bold text-zinc-100 uppercase tracking-wide">Deploy New Detection Rule</h3>

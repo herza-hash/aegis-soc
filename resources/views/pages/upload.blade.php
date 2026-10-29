@@ -52,7 +52,7 @@
     <div class="flex flex-col gap-4 border-b border-zinc-800/80 pb-6 sm:flex-row sm:items-center sm:justify-between">
         <div>
             <div class="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-purple-400">
-                <span class="inline-block h-1.5 w-1.5 rounded-full bg-purple-400 shadow-[0_0_8px_#a855f7]"></span>
+                <span class="inline-block h-1.5 w-1.5 rounded-full bg-purple-400"></span>
                 <span>AEGIS / FILE UPLOAD & BATCH ANALYSIS</span>
             </div>
             <h1 class="mt-1 text-2xl font-bold tracking-tight text-zinc-100 sm:text-3xl">Log File Upload & Analysis</h1>
@@ -104,7 +104,7 @@
     @endif
 
     <!-- Upload Section -->
-    <div class="rounded-lg border border-purple-900/40 bg-gradient-to-b from-purple-950/10 to-zinc-950/80 p-6 shadow-lg shadow-purple-950/10">
+    <div class="rounded-lg border border-purple-900/40 bg-gradient-to-b from-purple-950/10 to-zinc-950/80 p-6">
         <div class="flex items-center justify-between border-b border-zinc-800/80 pb-3 mb-5">
             <div class="flex items-center gap-2">
                 <span class="h-2 w-2 rounded-full bg-purple-400 animate-pulse"></span>
@@ -211,17 +211,17 @@
             <!-- Submit -->
             <div class="flex flex-col gap-3 border-t border-zinc-800/80 pt-4 sm:flex-row sm:items-center sm:justify-between">
                 <div class="font-mono text-[11px] text-zinc-500 space-y-1">
-                    <p>📋 Each line/entry is processed through the <span class="text-zinc-300">full SIEM pipeline</span>: Parser → Normalizer → Detection Engine</p>
-                    <p>⚡ Detection rules are correlated in <span class="text-cyan-300">real-time</span> — alerts are generated immediately for matching threats.</p>
+                    <p><i class="fa-solid fa-clipboard-list text-cyan-400 mr-1.5"></i>Each line/entry is processed through the <span class="text-zinc-300">full SIEM pipeline</span>: Parser → Normalizer → Detection Engine</p>
+                    <p><i class="fa-solid fa-bolt text-cyan-400 mr-1.5"></i>Detection rules are correlated in <span class="text-cyan-300">real-time</span> — alerts are generated immediately for matching threats.</p>
                 </div>
                 <button type="submit" :disabled="!selectedFile || isUploading"
-                        class="inline-flex items-center justify-center gap-2 rounded bg-purple-600 px-6 py-2 font-mono text-xs font-semibold text-white hover:bg-purple-500 transition-colors shadow-sm shadow-purple-600/30 disabled:opacity-40 disabled:cursor-not-allowed whitespace-nowrap"
+                        class="inline-flex items-center justify-center gap-2 rounded bg-purple-600 px-6 py-2 font-mono text-xs font-semibold text-white hover:bg-purple-500 transition-colors disabled:opacity-40 disabled:cursor-not-allowed whitespace-nowrap"
                         :class="isUploading ? 'animate-pulse' : ''">
                     <template x-if="!isUploading">
-                        <span>🚀 UPLOAD & ANALYZE</span>
+                        <span><i class="fa-solid fa-cloud-arrow-up mr-1.5"></i>UPLOAD & ANALYZE</span>
                     </template>
                     <template x-if="isUploading">
-                        <span>⏳ PROCESSING PIPELINE...</span>
+                        <span><i class="fa-solid fa-spinner fa-spin mr-1.5"></i>PROCESSING PIPELINE...</span>
                     </template>
                 </button>
             </div>
@@ -430,7 +430,7 @@
         <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
             <!-- SSH Brute Force Sample -->
             <div>
-                <span class="block font-mono text-[10px] uppercase text-rose-400 mb-1.5">🔐 SSH Brute Force Simulation (auth.log)</span>
+                <span class="block font-mono text-[10px] uppercase text-rose-400 mb-1.5"><i class="fa-solid fa-key text-rose-400 mr-1.5"></i>SSH Brute Force Simulation (auth.log)</span>
                 <div class="rounded bg-black p-3 font-mono text-[10px] text-zinc-300 border border-zinc-800 overflow-x-auto max-h-36 overflow-y-auto">
                     <pre>Failed password for invalid user root from 185.220.101.45 port 42812 ssh2
 Failed password for admin from 45.154.255.89 port 38110 ssh2
@@ -444,7 +444,7 @@ Failed password for invalid user root from 185.220.101.45 port 42818 ssh2</pre>
 
             <!-- Web Access Log Sample -->
             <div>
-                <span class="block font-mono text-[10px] uppercase text-amber-400 mb-1.5">🌐 Web Attack Probe (access.log)</span>
+                <span class="block font-mono text-[10px] uppercase text-amber-400 mb-1.5"><i class="fa-solid fa-globe text-amber-400 mr-1.5"></i>Web Attack Probe (access.log)</span>
                 <div class="rounded bg-black p-3 font-mono text-[10px] text-zinc-300 border border-zinc-800 overflow-x-auto max-h-36 overflow-y-auto">
                     <pre>185.220.101.45 - - [29/Oct/2026:13:30:15 +0000] "GET /.env HTTP/1.1" 404 196 "-" "curl/7.68.0"
 194.26.29.112 - - [29/Oct/2026:13:02:40 +0000] "GET /wp-admin/setup-config.php HTTP/1.1" 404 153 "-" "Nikto/2.1.6"

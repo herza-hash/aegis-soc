@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContainmentController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\LogExplorerController;
 use App\Http\Controllers\LogSourceController;
 use App\Http\Controllers\LogUploadController;
@@ -10,6 +11,8 @@ use App\Http\Controllers\SettingController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard/data', [DashboardController::class, 'data'])->name('dashboard.data');
+Route::get('/locale/{locale}', [LocaleController::class, 'switch'])->name('locale.switch');
 
 // Log File Upload & Batch Analysis
 Route::get('/upload', [LogUploadController::class, 'index'])->name('upload.index');

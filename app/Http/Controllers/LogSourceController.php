@@ -128,7 +128,7 @@ class LogSourceController extends Controller
 
         $feedback = "Log ingested into pipeline '{$source->name}' and normalized as [{$normalized?->event_category} / {$normalized?->event_action}].";
         if ($alert) {
-            $feedback .= " ⚠️ ALERT TRIGGERED: #SEC-{$alert->id} ({$alert->severity} severity)!";
+            $feedback .= " [ALERT TRIGGERED]: #SEC-{$alert->id} ({$alert->severity} severity)!";
         }
 
         return back()->with('success', $feedback);

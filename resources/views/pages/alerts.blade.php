@@ -13,7 +13,7 @@
     <div class="flex flex-col gap-4 border-b border-zinc-800/80 pb-6 sm:flex-row sm:items-center sm:justify-between">
         <div>
             <div class="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-rose-400">
-                <span class="inline-block h-1.5 w-1.5 rounded-full bg-rose-500 shadow-[0_0_8px_#f43f5e]"></span>
+                <span class="inline-block h-1.5 w-1.5 rounded-full bg-rose-500"></span>
                 <span>AEGIS / INCIDENT RESPONSE QUEUE</span>
             </div>
             <h1 class="mt-1 text-2xl font-bold tracking-tight text-zinc-100 sm:text-3xl">Security Alerts & Incident Triage</h1>
@@ -313,7 +313,7 @@
 
     <!-- Alert Investigation Modal -->
     <div x-cloak x-show="modalOpen" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" @click.self="modalOpen = false" @keydown.escape.window="modalOpen = false">
-        <div class="w-full max-w-xl rounded-lg border border-zinc-800 bg-zinc-950 shadow-2xl overflow-hidden font-mono text-xs" x-show="modalOpen" x-transition>
+        <div class="w-full max-w-xl rounded-lg border border-zinc-800 bg-zinc-950 overflow-hidden font-mono text-xs" x-show="modalOpen" x-transition>
             <!-- Modal Header -->
             <div class="flex items-center justify-between border-b border-zinc-800 px-5 py-4 bg-zinc-900/60">
                 <div class="flex items-center gap-2">
@@ -368,7 +368,7 @@
                     </div>
                     <div class="flex items-center gap-2">
                         <a :href="'/alerts/' + selectedAlert?.id + '/report'" target="_blank" class="rounded bg-cyan-700 hover:bg-cyan-600 px-3 py-1.5 text-xs font-semibold text-white transition-colors">
-                            🖨️ DOSSIER
+                            <i class="fa-solid fa-print mr-1"></i> DOSSIER
                         </a>
                         <a :href="'{{ route('logs.index') }}?source_ip=' + selectedAlert?.source_ip" class="rounded bg-zinc-800 border border-zinc-700 px-3 py-1.5 text-xs font-semibold text-zinc-300 hover:bg-zinc-700 transition-colors">
                             VIEW LOGS &rarr;
@@ -379,8 +379,8 @@
                             <input type="hidden" name="reason" :value="'SOAR Quarantine against rule: ' + selectedAlert?.rule_name">
                             <input type="hidden" name="duration" value="24h">
                             <input type="hidden" name="alert_id" :value="selectedAlert?.id">
-                            <button type="submit" class="rounded bg-rose-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-rose-500 transition-colors shadow-sm shadow-rose-600/30">
-                                🛡️ BLOCK IP
+                            <button type="submit" class="rounded bg-rose-600 px-3 py-1.5 text-xs font-bold text-white hover:bg-rose-500 transition-colors">
+                                <i class="fa-solid fa-shield-halved mr-1"></i> BLOCK IP
                             </button>
                         </form>
                     </div>

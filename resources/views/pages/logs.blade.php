@@ -22,7 +22,7 @@
     <div class="flex flex-col gap-4 border-b border-zinc-800/80 pb-6 sm:flex-row sm:items-center sm:justify-between">
         <div>
             <div class="flex items-center gap-2 font-mono text-[11px] uppercase tracking-wider text-cyan-400">
-                <span class="inline-block h-1.5 w-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#22d3ee]"></span>
+                <span class="inline-block h-1.5 w-1.5 rounded-full bg-cyan-400"></span>
                 <span>AEGIS / TELEMETRY ANALYSIS</span>
             </div>
             <h1 class="mt-1 text-2xl font-bold tracking-tight text-zinc-100 sm:text-3xl">Log Explorer & Event Analyzer</h1>
@@ -38,7 +38,7 @@
     </div>
 
     <!-- Advanced Multi-Filter Search Panel -->
-    <div class="rounded-lg border border-zinc-800 bg-zinc-950 p-5 shadow-lg">
+    <div class="rounded-lg border border-zinc-800 bg-zinc-950 p-5">
         <form method="GET" action="{{ route('logs.index') }}" class="space-y-4">
             <!-- First Row: Keyword Search Bar -->
             <div class="relative">
@@ -126,7 +126,7 @@
                         </svg>
                         <span>EXPORT CSV</span>
                     </a>
-                    <button type="submit" class="inline-flex items-center gap-1.5 rounded-md bg-cyan-600 px-4 py-2 font-mono text-xs font-semibold text-white hover:bg-cyan-500 transition-colors shadow-sm shadow-cyan-600/30">
+                    <button type="submit" class="inline-flex items-center gap-1.5 rounded-md bg-cyan-600 px-4 py-2 font-mono text-xs font-semibold text-white hover:bg-cyan-500 transition-colors">
                         SEARCH TELEMETRY
                     </button>
                 </div>
@@ -182,7 +182,7 @@
                                         $intel = \App\Services\ThreatIntelService::lookup($event->source_ip);
                                     @endphp
                                     <div class="flex items-center gap-1.5">
-                                        <span class="text-sm select-none" title="{{ $intel['country'] }} ({{ $intel['asn'] }})">{{ $intel['flag'] }}</span>
+                                        <span class="text-sm select-none" title="{{ $intel['country'] }} ({{ $intel['asn'] }})"><i class="{{ $intel['icon'] ?? 'fa-solid fa-globe text-cyan-400' }}"></i></span>
                                         <div>
                                             <span class="font-bold text-zinc-200">{{ $event->source_ip }}</span>
                                             @if($event->username)
@@ -287,7 +287,7 @@
 
     <!-- Log Payload Inspector Modal -->
     <div x-cloak x-show="inspectModalOpen" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm" @click.self="inspectModalOpen = false" @keydown.escape.window="inspectModalOpen = false">
-        <div class="w-full max-w-3xl rounded-lg border border-zinc-800 bg-zinc-950 shadow-2xl overflow-hidden font-mono text-xs max-h-[90vh] flex flex-col" x-show="inspectModalOpen" x-transition>
+        <div class="w-full max-w-3xl rounded-lg border border-zinc-800 bg-zinc-950 overflow-hidden font-mono text-xs max-h-[90vh] flex flex-col" x-show="inspectModalOpen" x-transition>
             <!-- Modal Header -->
             <div class="flex items-center justify-between border-b border-zinc-800 px-6 py-4 bg-zinc-900/60 flex-shrink-0">
                 <div class="flex items-center gap-2">

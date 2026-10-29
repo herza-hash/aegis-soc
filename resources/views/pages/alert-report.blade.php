@@ -6,7 +6,7 @@
     <title>Incident Dossier #SEC-{{ str_pad($alert->id, 4, '0', STR_PAD_LEFT) }} | Aegis SOC</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     @vite(['resources/css/app.css'])
     <style>
         @media print {
@@ -26,7 +26,7 @@
         </a>
 
         <div class="flex items-center gap-2">
-            <button onclick="window.print()" class="inline-flex items-center gap-2 rounded-md bg-cyan-600 px-4 py-2 font-mono text-xs font-semibold text-white hover:bg-cyan-500 transition-colors shadow-lg shadow-cyan-600/30">
+            <button onclick="window.print()" class="inline-flex items-center gap-2 rounded-md bg-cyan-600 px-4 py-2 font-mono text-xs font-semibold text-white hover:bg-cyan-500 transition-colors">
                 <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
                 </svg>
@@ -36,7 +36,7 @@
     </div>
 
     <!-- Formal Printable Dossier Container -->
-    <div class="max-w-4xl mx-auto rounded-xl border border-zinc-800 bg-zinc-900/90 p-8 sm:p-12 print-card shadow-2xl space-y-8 font-mono text-xs">
+    <div class="max-w-4xl mx-auto rounded-xl border border-zinc-800 bg-zinc-900/90 p-8 sm:p-12 print-card space-y-8 font-mono text-xs">
         <!-- Document Header -->
         <div class="border-b-2 border-zinc-700 pb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
